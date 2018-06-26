@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_214887_ezwim.ezwimAddOrderedItemAttributesInXML</api_name>
+        <client_callable>false</client_callable>
+        <description>Ezwim class for adding OrderedItem Attributes in XML formaat</description>
+        <name>ezwimAddOrderedItemAttributesInXML</name>
+        <script><![CDATA[// CI addOrderedItemAttributesInXML 
+
+/**
+ * Class for adding OrderedItem Attributes in XML format
+ * 
+ * Jaco van Rooijen jvanrooijen@ezwim.com
+ */
+
+var addOrderedItemAttributesInXML = Class.create();
+
+
+addOrderedItemAttributesInXML.prototype = {
+    
+    initialize: function(ciData) {
+        this.ciData = ciData;
+        this.debug_flag = GlideProperties.getBoolean('glide.discovery.debug.ci_identification', false);
+        // this.logger = JSUtil.notNil(logger) ? logger : new DiscoveryLogger();
+        this.debug('addOrderedItemAttributesInXML.initialize()');
+    },
+    
+    /*
+     * .
+     */
+    process: function() {
+        this.debug('addOrderedItemAttributesInXML.process()');
+        try { 
+gs.log('addOrderedItemAttributesInXML.process: The ciData object contains the following information' + this.ciData.toString());
+			
+// var xmlString = "<devices>" + "</devices>";
+	var xmldoc = new XMLDocument();		
+	var deviceNo = 0;
+			
+	 while(this.ciData.next()) {
+		deviceNo = deviceNo + 1;
+		gs.log("found sys_id for request item "+ deviceNo.toString() +": " + this.ciData.sys_id); 
+
+		var deviceN = xmldoc.createElement("device"+deviceNo);
+		xmldoc.setCurrent(deviceN);
+		xmldoc.createElement("cat_item", this.ciData.cat_item);
+		xmldoc.createElement("item_short_description", this.ciData.short_description);
+		 
+		 
+		var reqitemoption = new GlideRecord('sc_item_option_mtom');
+		reqitemoption.addQuery('request_item='+this.ciData.sys_id+'^');
+		reqitemoption.query();
+		 
+		var optionNo = 0;
+		while(reqitemoption.next()) {
+			optionNo = optionNo + 1;
+			gs.log("found request item "+ optionNo.toString() +": " + reqitemoption.sc_item_option.item_option_new.name); 			
+			
+			var optionN = xmldoc.createElement("option");
+			xmldoc.setCurrent(optionN);
+			xmldoc.createElement("item_name", reqitemoption.sc_item_option.item_option_new.name);
+			xmldoc.createElement("item_value", reqitemoption.sc_item_option.value);
+
+			xmldoc.setCurrent(deviceN);
+		 } 
+		 
+
+	 }
+            return (xmldoc);
+        } catch (ex) {
+            this._log_error(ex);
+			 gs.log("addOrderedItemAttributesInXML.process caught error: " + ex.toString()); 
+        }
+    },
+    
+    _log_error: function(ex) {
+        this.logger.error('Unhandled exception: ' + ex + ' (addOrderedItemAttributesInXML)');
+    },
+    
+    /*
+     * Log a message to the CI Identification log, but only if we've got debug logging turned on...
+     */
+    debug: function(msg) {
+        if (this.debug_flag)
+            this.logger.info(msg + ' (addOrderedItemAttributesInXML)');
+    },
+    
+    type: 'addOrderedItemAttributesInXML'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-06-26 10:49:55</sys_created_on>
+        <sys_id>d25578fb37721300a07ddc1873990ee6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ezwimAddOrderedItemAttributesInXML</sys_name>
+        <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
+        <sys_update_name>sys_script_include_d25578fb37721300a07ddc1873990ee6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-06-26 10:49:55</sys_updated_on>
+    </sys_script_include>
+</record_update>

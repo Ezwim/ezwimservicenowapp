@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_soap_message_function">
+    <sys_soap_message_function action="INSERT_OR_UPDATE">
+        <authentication_type/>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <certificate/>
+        <enable_mutual_auth>false</enable_mutual_auth>
+        <envelope><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:examples:helloservice">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:sayHello soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+ 
+		  <object xsi:type="xsd:string">ORDER</object>
+		  <sysid xsi:type="xsd:string">${sys_id}</sysid>
+		  <number xsi:type="xsd:string">${number}</number>
+		  <short_description xsi:type="xsd:string">${short_description}</short_description>
+		  <comments xsi:type="xsd:string">${comments}</comments>
+		  <requested_for xsi:type="xsd:string">${requested_for}</requested_for>
+		  
+		  <priority xsi:type="xsd:string">${priority}</priority>
+		  <impact xsi:type="xsd:string">${impact}</impact>
+		  <urgency xsi:type="xsd:string">${urgency}</urgency>
+		  <due_date xsi:type="xsd:string">${due_date}</due_date>
+		  
+		  <state xsi:type="xsd:string">${state}</state>
+		  <stage xsi:type="xsd:string">${stage}</stage>
+		  <request_state xsi:type="xsd:string">${request_state}</request_state>
+
+ 		  <delivery_address xsi:type="xsd:string">${delivery_address}</delivery_address>
+		  <price xsi:type="xsd:string">${price}</price>
+		  <special_instructions xsi:type="xsd:string">${special_instructions}</special_instructions>
+
+		  <approval xsi:type="xsd:string">${approval}</approval>
+		  <upon_reject xsi:type="xsd:string">${upon_reject}</upon_reject>
+		  <upon_approval xsi:type="xsd:string">${upon_approval}</upon_approval>
+		  		  
+		  <sys_domain_path xsi:type="xsd:string">${sys_domain_path}</sys_domain_path>
+		  <sys_class_name xsi:type="xsd:string">${sys_class_name}</sys_class_name>
+
+		  <devices xsi:type="xsd:string">${devices}</devices>
+		  
+	  </urn:sayHello>
+   </soapenv:Body>
+</soapenv:Envelope>]]></envelope>
+        <function_name>SendOrder</function_name>
+        <key_store/>
+        <key_store_alias/>
+        <key_store_password/>
+        <lock>false</lock>
+        <protocol_profile/>
+        <qualified_name>EzwimESMOrders [ SendOrder ]</qualified_name>
+        <soap_action>sendOrder</soap_action>
+        <soap_endpoint>http://esmorders.getsandbox.com/SendOrder/</soap_endpoint>
+        <soap_message display_value="EzwimESMOrders">d838b43f37721300a07ddc1873990e8f</soap_message>
+        <strip_whitespace>false</strip_whitespace>
+        <sys_class_name>sys_soap_message_function</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-06-26 11:04:25</sys_created_on>
+        <sys_id>a878b47f37721300a07ddc1873990e5f</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>SendOrder</sys_name>
+        <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
+        <sys_update_name>sys_soap_message_function_a878b47f37721300a07ddc1873990e5f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-06-26 11:32:51</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <use_mid_server/>
+        <use_ws_security>false</use_ws_security>
+        <ws_security_type/>
+        <ws_security_username_profile/>
+        <ws_security_x509_profile/>
+    </sys_soap_message_function>
+</record_update>

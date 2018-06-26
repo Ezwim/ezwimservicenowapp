@@ -9,53 +9,56 @@
         <enable_mutual_auth>false</enable_mutual_auth>
         <envelope><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:examples:helloservice">
    <soapenv:Header/>
+	<!-- http://senduser.getsandbox.com/SayHello/ -->
+	<!-- https://integration-stagdup2.eztest.nu/servicenow -->
+
    <soapenv:Body>
       <urn:sayHello soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
  
-		  <object xsi:type="xsd:string">CASE</object>
+		  <object xsi:type="xsd:string">USER</object>
 		  <sysid xsi:type="xsd:string">${sys_id}</sysid>
-		  <description xsi:type="xsd:string">${description}</description>
-		  <caller xsi:type="xsd:string">${caller}</caller>
-		  <priority xsi:type="xsd:string">${priority}</priority>
-		  <number xsi:type="xsd:string">${number}</number>
-		  <severity xsi:type="xsd:string">${severity}</severity>
-		  <state xsi:type="xsd:string">${state}</state>
-
- 		  <sys_updated_on xsi:type="xsd:string">${sys_updated_on}</sys_updated_on>
-		  <hold_reason xsi:type="xsd:string">${hold_reason}</hold_reason>
-		  <resolved_by xsi:type="xsd:string">${resolved_by}</resolved_by>
-		  <sys_updated_by xsi:type="xsd:string">${sys_updated_by}</sys_updated_by>
+		  <department xsi:type="xsd:string">${department}</department>
+		  <cost_center xsi:type="xsd:string">${cost_center}</cost_center>
+		  <email xsi:type="xsd:string">${email}</email>
+		  <employee_number xsi:type="xsd:string">${employee_number}</employee_number>
+		  <first_name xsi:type="xsd:string">${first_name}</first_name>
+		  <mid_name xsi:type="xsd:string">${mid_name}</mid_name>
+		  <last_name xsi:type="xsd:string">${last_name}</last_name>
+		  <location xsi:type="xsd:string">${location}</location>
+		  <roles xsi:type="xsd:string">${roles}</roles>
+ 		  <name xsi:type="xsd:string">${name}</name>
+		  <user_name xsi:type="xsd:string">${user_name}</user_name>
 		  <active xsi:type="xsd:string">${active}</active>
-		  <sys_domain_path xsi:type="xsd:string">${sys_domain_path}</sys_domain_path>
-		  <description xsi:type="xsd:string">${description}</description>
-		  <work_notes_list xsi:type="xsd:string">${work_notes_list}</work_notes_list>
-		  
+		  <mobile_phone xsi:type="xsd:string">${mobile_phone}</mobile_phone>
+		  <preferred_language xsi:type="xsd:string">${preferred_language}</preferred_language>
+		  <last_login xsi:type="xsd:string">${last_login}</last_login>
+ 		  
 	  </urn:sayHello>
    </soapenv:Body>
 </soapenv:Envelope>]]></envelope>
-        <function_name>SendCase</function_name>
+        <function_name>SendUser</function_name>
         <key_store/>
         <key_store_alias/>
         <key_store_password/>
         <lock>false</lock>
         <protocol_profile/>
-        <qualified_name>EzwimESMCases [ SendCase ]</qualified_name>
-        <soap_action>sendCase</soap_action>
-        <soap_endpoint>http://esmincidents.getsandbox.com/SendCase/</soap_endpoint>
-        <soap_message display_value="EzwimESMCases">5cc4f0fb37721300a07ddc1873990eee</soap_message>
+        <qualified_name>EzwimESMUsers [ SendUser ]</qualified_name>
+        <soap_action>sendUser</soap_action>
+        <soap_endpoint>http://senduser.getsandbox.com/SendUser/</soap_endpoint>
+        <soap_message display_value="EzwimESMUsers">5afdf83337b21300a07ddc1873990e2a</soap_message>
         <strip_whitespace>false</strip_whitespace>
         <sys_class_name>sys_soap_message_function</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-06-26 10:47:00</sys_created_on>
-        <sys_id>6af474fb37721300a07ddc1873990efa</sys_id>
+        <sys_created_on>2018-06-26 11:27:36</sys_created_on>
+        <sys_id>842e3c3337b21300a07ddc1873990e33</sys_id>
         <sys_mod_count>1</sys_mod_count>
-        <sys_name>SendCase</sys_name>
+        <sys_name>SendUser</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
         <sys_policy/>
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
-        <sys_update_name>sys_soap_message_function_6af474fb37721300a07ddc1873990efa</sys_update_name>
+        <sys_update_name>sys_soap_message_function_842e3c3337b21300a07ddc1873990e33</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-26 11:30:29</sys_updated_on>
+        <sys_updated_on>2018-06-26 11:31:35</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <use_mid_server/>
         <use_ws_security>false</use_ws_security>

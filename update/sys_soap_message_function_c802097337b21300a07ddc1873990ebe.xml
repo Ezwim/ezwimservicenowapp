@@ -9,53 +9,48 @@
         <enable_mutual_auth>false</enable_mutual_auth>
         <envelope><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:examples:helloservice">
    <soapenv:Header/>
+	<!-- http://userentitlements.getsandbox.com/sendSoftware  -->
+	<!-- https://integration-stagdup2.eztest.nu/servicenow -->
+
    <soapenv:Body>
       <urn:sayHello soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
  
-		  <object xsi:type="xsd:string">CASE</object>
+		  <object xsi:type="xsd:string">SOFTWARE</object>
 		  <sysid xsi:type="xsd:string">${sys_id}</sysid>
-		  <description xsi:type="xsd:string">${description}</description>
-		  <caller xsi:type="xsd:string">${caller}</caller>
-		  <priority xsi:type="xsd:string">${priority}</priority>
-		  <number xsi:type="xsd:string">${number}</number>
-		  <severity xsi:type="xsd:string">${severity}</severity>
-		  <state xsi:type="xsd:string">${state}</state>
-
- 		  <sys_updated_on xsi:type="xsd:string">${sys_updated_on}</sys_updated_on>
-		  <hold_reason xsi:type="xsd:string">${hold_reason}</hold_reason>
-		  <resolved_by xsi:type="xsd:string">${resolved_by}</resolved_by>
-		  <sys_updated_by xsi:type="xsd:string">${sys_updated_by}</sys_updated_by>
-		  <active xsi:type="xsd:string">${active}</active>
-		  <sys_domain_path xsi:type="xsd:string">${sys_domain_path}</sys_domain_path>
-		  <description xsi:type="xsd:string">${description}</description>
-		  <work_notes_list xsi:type="xsd:string">${work_notes_list}</work_notes_list>
-		  
+		  <licensed_by_raw xsi:type="xsd:string">${licensed_by_raw}</licensed_by_raw>
+		  <licensed_by xsi:type="xsd:string">${licensed_by}</licensed_by>
+		  <allocated_to xsi:type="xsd:string">${allocated_to}</allocated_to>
+		  <display_name xsi:type="xsd:string">${display_name}</display_name>
+		  <assigned_to_raw xsi:type="xsd:string">${assigned_to_raw}</assigned_to_raw>
+		  <assigned_to xsi:type="xsd:string">${assigned_to}</assigned_to>
+		  <sys_updated_on xsi:type="xsd:string">${sys_updated_on}</sys_updated_on>
+	  
 	  </urn:sayHello>
    </soapenv:Body>
 </soapenv:Envelope>]]></envelope>
-        <function_name>SendCase</function_name>
+        <function_name>SendSoftware</function_name>
         <key_store/>
         <key_store_alias/>
         <key_store_password/>
         <lock>false</lock>
         <protocol_profile/>
-        <qualified_name>EzwimESMCases [ SendCase ]</qualified_name>
-        <soap_action>sendCase</soap_action>
-        <soap_endpoint>http://esmincidents.getsandbox.com/SendCase/</soap_endpoint>
-        <soap_message display_value="EzwimESMCases">5cc4f0fb37721300a07ddc1873990eee</soap_message>
+        <qualified_name>EzwimESMSoftware [ SendSoftware ]</qualified_name>
+        <soap_action>SendSoftware</soap_action>
+        <soap_endpoint>http://userentitlements.getsandbox.com/sendSoftware</soap_endpoint>
+        <soap_message display_value="EzwimESMSoftware">1ec1cd3337b21300a07ddc1873990e5b</soap_message>
         <strip_whitespace>false</strip_whitespace>
         <sys_class_name>sys_soap_message_function</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-06-26 10:47:00</sys_created_on>
-        <sys_id>6af474fb37721300a07ddc1873990efa</sys_id>
-        <sys_mod_count>1</sys_mod_count>
-        <sys_name>SendCase</sys_name>
+        <sys_created_on>2018-06-26 11:44:56</sys_created_on>
+        <sys_id>c802097337b21300a07ddc1873990ebe</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SendSoftware</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
         <sys_policy/>
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
-        <sys_update_name>sys_soap_message_function_6af474fb37721300a07ddc1873990efa</sys_update_name>
+        <sys_update_name>sys_soap_message_function_c802097337b21300a07ddc1873990ebe</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-26 11:30:29</sys_updated_on>
+        <sys_updated_on>2018-06-26 11:44:56</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <use_mid_server/>
         <use_ws_security>false</use_ws_security>
