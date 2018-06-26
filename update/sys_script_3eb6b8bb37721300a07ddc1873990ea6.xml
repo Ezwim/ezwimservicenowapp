@@ -3,7 +3,7 @@
     <sys_script action="INSERT_OR_UPDATE">
         <abort_action>false</abort_action>
         <access>package_private</access>
-        <action_delete>true</action_delete>
+        <action_delete>false</action_delete>
         <action_insert>true</action_insert>
         <action_query>false</action_query>
         <action_update>true</action_update>
@@ -32,16 +32,6 @@
 
 try { 
 	
-	
- gs.log("Ezwim Send new Order: processing sc_order :"+current.number);
-
- var reqitem = new GlideRecord('sc_req_item');
-	
-reqitem.addQuery('request='+current.sys_id+'^');
-reqitem.query();
- 
-
-	
 var s = new sn_ws.SOAPMessageV2('EzwimESMOrders', 'SendOrder');
 
 s.setStringParameterNoEscape('number', current.number); 
@@ -66,18 +56,13 @@ s.setStringParameterNoEscape('sys_domain_path', current.sys_domain_path);
 s.setStringParameterNoEscape('sys_class_name', current.sys_class_name);
 	
 // Moved to the addOrderedItemAttributesInXML Script Include
+// var reqitem = new GlideRecord('sc_req_item');
+// reqitem.addQuery('request='+current.sys_id+'^');
+// reqitem.query();	
 // while(reqitem.next()) {
-//  gs.log("found request item: " + reqitem.short_description); 
-	
-//	s.setStringParameterNoEscape('cat_item', reqitem.cat_item);
-// 	s.setStringParameterNoEscape('price', reqitem.price);
-// 	s.setStringParameterNoEscape('item_short_description', reqitem.short_description);
-
-	var orderedItemXML = new ezwimAddOrderedItemAttributesInXML(reqitem);
-	var orderedItemXMLResult = orderedItemXML.process().toString();
-	gs.log('orderedItemXML returned: ' +  orderedItemXMLResult);
-	s.setStringParameter('devices', orderedItemXMLResult);
-	
+//	var orderedItemXML = new ezwimAddOrderedItemAttributesInXML(reqitem);
+//	var orderedItemXMLResult = orderedItemXML.process().toString();
+//	s.setStringParameter('devices', orderedItemXMLResult);
 //}	
 	
  var response = s.execute();
@@ -85,8 +70,8 @@ s.setStringParameterNoEscape('sys_class_name', current.sys_class_name);
  var status = response.getStatusCode();
 }
 catch(ex) { 
- var message = ex.getMessage();
- gs.log('ESM Send new Order to ESM failed:' + message);
+ var message = 'ESM Send new Order to ESM failed'; // ex.getMessage();
+ //gs.log('ESM Send new Order to ESM failed:' + message);
 	
 }
 
@@ -97,7 +82,7 @@ catch(ex) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>3eb6b8bb37721300a07ddc1873990ea6</sys_id>
-        <sys_mod_count>7</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>Ezwim Send new Order to ESM</sys_name>
         <sys_overrides/>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
@@ -105,7 +90,7 @@ catch(ex) {
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_script_3eb6b8bb37721300a07ddc1873990ea6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-26 12:34:28</sys_updated_on>
+        <sys_updated_on>2018-06-26 14:16:09</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>
