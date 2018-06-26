@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_soap_message">
+    <sys_soap_message action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <authentication_type/>
+        <basic_auth_password/>
+        <basic_auth_profile/>
+        <basic_auth_user/>
+        <description/>
+        <download_wsdl>false</download_wsdl>
+        <enable_mutual_auth>false</enable_mutual_auth>
+        <name>SendESMCases</name>
+        <protocol_profile/>
+        <sys_class_name>sys_soap_message</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-06-26 10:45:57</sys_created_on>
+        <sys_id>5cc4f0fb37721300a07ddc1873990eee</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SendESMCases</sys_name>
+        <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
+        <sys_update_name>sys_soap_message_5cc4f0fb37721300a07ddc1873990eee</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-06-26 10:45:57</sys_updated_on>
+        <use_basic_auth>false</use_basic_auth>
+        <wsdl/>
+        <wsdl_xml><![CDATA[<definitions name = "HelloService"
+   targetNamespace = "http://sayhello.getsandbox.com/wsdl/HelloService.wsdl"
+   xmlns = "http://schemas.xmlsoap.org/wsdl/"
+   xmlns:soap = "http://schemas.xmlsoap.org/wsdl/soap/"
+   xmlns:tns = "http://www.examples.com/wsdl/HelloService.wsdl"
+   xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
+ 
+   <message name = "SayHelloRequest">
+      <part name = "firstName" type = "xsd:string"/>
+   </message>
+	
+   <message name = "SayHelloResponse">
+      <part name = "greeting" type = "xsd:string"/>
+   </message>
+
+   <portType name = "Hello_PortType">
+      <operation name = "sayHello">
+         <input message = "tns:SayHelloRequest"/>
+         <output message = "tns:SayHelloResponse"/>
+      </operation>
+   </portType>
+
+   <binding name = "Hello_Binding" type = "tns:Hello_PortType">
+      <soap:binding style = "rpc"
+         transport = "http://schemas.xmlsoap.org/soap/http"/>
+      <operation name = "sayHello">
+         <soap:operation soapAction = "sayHello"/>
+         <input>
+            <soap:body
+               encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+               namespace = "urn:examples:helloservice"
+               use = "encoded"/>
+         </input>
+		
+         <output>
+            <soap:body
+               encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
+               namespace = "urn:examples:helloservice"
+               use = "encoded"/>
+         </output>
+      </operation>
+   </binding>
+
+   <service name = "Hello_Service">
+      <documentation>WSDL File for HelloService</documentation>
+      <port binding = "tns:Hello_Binding" name = "Hello_Port">
+         <soap:address
+            location = "http://sayhello.getsandbox.com/SayHello/" />
+      </port>
+   </service>
+</definitions>]]></wsdl_xml>
+    </sys_soap_message>
+</record_update>
