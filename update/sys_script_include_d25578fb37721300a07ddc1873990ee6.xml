@@ -15,10 +15,10 @@
  * Jaco van Rooijen jvanrooijen@ezwim.com
  */
 
-var addOrderedItemAttributesInXML = Class.create();
+var ezwimAddOrderedItemAttributesInXML = Class.create();
 
 
-addOrderedItemAttributesInXML.prototype = {
+ezwimAddOrderedItemAttributesInXML.prototype = {
     
     initialize: function(ciData) {
         this.ciData = ciData;
@@ -31,9 +31,9 @@ addOrderedItemAttributesInXML.prototype = {
      * .
      */
     process: function() {
-        this.debug('addOrderedItemAttributesInXML.process()');
+        this.debug('ezwimAddOrderedItemAttributesInXML.process()');
         try { 
-gs.log('addOrderedItemAttributesInXML.process: The ciData object contains the following information' + this.ciData.toString());
+gs.log('ezwimAddOrderedItemAttributesInXML.process: The ciData object contains the following information' + this.ciData.toString());
 			
 // var xmlString = "<devices>" + "</devices>";
 	var xmldoc = new XMLDocument();		
@@ -71,12 +71,12 @@ gs.log('addOrderedItemAttributesInXML.process: The ciData object contains the fo
             return (xmldoc);
         } catch (ex) {
             this._log_error(ex);
-			 gs.log("addOrderedItemAttributesInXML.process caught error: " + ex.toString()); 
+			 gs.log("ezwimAddOrderedItemAttributesInXML.process caught error: " + ex.toString()); 
         }
     },
     
     _log_error: function(ex) {
-        this.logger.error('Unhandled exception: ' + ex + ' (addOrderedItemAttributesInXML)');
+        this.logger.error('Unhandled exception: ' + ex + ' (ezwimAddOrderedItemAttributesInXML)');
     },
     
     /*
@@ -84,23 +84,23 @@ gs.log('addOrderedItemAttributesInXML.process: The ciData object contains the fo
      */
     debug: function(msg) {
         if (this.debug_flag)
-            this.logger.info(msg + ' (addOrderedItemAttributesInXML)');
+            this.logger.info(msg + ' (ezwimAddOrderedItemAttributesInXML)');
     },
     
-    type: 'addOrderedItemAttributesInXML'
+    type: 'ezwimAddOrderedItemAttributesInXML'
 };
 ]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-26 10:49:55</sys_created_on>
         <sys_id>d25578fb37721300a07ddc1873990ee6</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>ezwimAddOrderedItemAttributesInXML</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_script_include_d25578fb37721300a07ddc1873990ee6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-26 10:49:55</sys_updated_on>
+        <sys_updated_on>2018-06-26 13:20:06</sys_updated_on>
     </sys_script_include>
 </record_update>
