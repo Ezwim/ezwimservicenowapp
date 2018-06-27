@@ -7,100 +7,110 @@
         <client_callable>false</client_callable>
         <description>Ezwim class for adding OrderedItem Attributes in XML formaat</description>
         <name>ezwimAddOrderedItemAttributesInXML</name>
-        <script><![CDATA[// CI addOrderedItemAttributesInXML 
+        <script><![CDATA[// CI addOrderedItemAttributesInXML
 
 /**
  * Class for adding OrderedItem Attributes in XML format
- * 
+ *
  * Jaco van Rooijen jvanrooijen@ezwim.com
  */
 
 var ezwimAddOrderedItemAttributesInXML = Class.create();
 
-
 ezwimAddOrderedItemAttributesInXML.prototype = {
-    
-    initialize: function(ciData) {
-        this.ciData = ciData;
-        this.debug_flag = GlideProperties.getBoolean('glide.discovery.debug.ci_identification', false);
-        // this.logger = JSUtil.notNil(logger) ? logger : new DiscoveryLogger();
-        this.debug('addOrderedItemAttributesInXML.initialize()');
-    },
-    
-    /*
-     * .
-     */
-    process: function() {
-        this.debug('ezwimAddOrderedItemAttributesInXML.process()');
-        try { 
-// gs.log('ezwimAddOrderedItemAttributesInXML.process: The ciData object contains the following information' + this.ciData.toString());
+	
+	initialize: function(ciData) {
+		gs.info('ezwimAddOrderedItemAttributesInXML.initialize();');
+		
+		this.ciData = ciData;
+		this.debug_flag = true; //GlideProperties.getBoolean('glide.discovery.debug.ci_identification', false);
+		
+		//gs.info('ezwimAddOrderedItemAttributesInXML: this.ciData = ' + this.ciData.toString() );
+		
+		// this.logger = JSUtil.notNil(logger) ? logger : new DiscoveryLogger();
+		// this.debug('ezwimAddOrderedItemAttributesInXML script_debugging = ' + GlideProperties.get('script_debugging', true));
+		// this.debug('ezwimAddOrderedItemAttributesInXML.initialize()');
+		// gs.info('ezwimAddOrderedItemAttributesInXML.initialized;');
+		
+	},
+	
+	/*
+ 	* main function.
+ 	*/
+	process: function() {
+		gs.info('ezwimAddOrderedItemAttributesInXML.process(): ciData = '+this.ciData.toString());
+		
+		try {
 			
-// var xmlString = "<devices>" + "</devices>";
-	var xmldoc = new XMLDocument();		
-	var deviceNo = 0;
+			//var xmlString = "<devices>" + "</devices>";
+			var xmlDoc = new XMLDocument2();
+			//xmlDoc.parseXML(xmlString);
+			var deviceNo = 0;
 			
-	 while(this.ciData.next()) {
-		deviceNo = deviceNo + 1;
-//		gs.log("found sys_id for request item "+ deviceNo.toString() +": " + this.ciData.sys_id); 
-
-		var deviceN = xmldoc.createElement("device"+deviceNo);
-		xmldoc.setCurrent(deviceN);
-		xmldoc.createElement("cat_item", this.ciData.cat_item);
-		xmldoc.createElement("item_short_description", this.ciData.short_description);
-		 
-		 
-		var reqitemoption = new GlideRecord('sc_item_option_mtom');
-		reqitemoption.addQuery('request_item='+this.ciData.sys_id+'^');
-		reqitemoption.query();
-		 
-		var optionNo = 0;
-		while(reqitemoption.next()) {
-			optionNo = optionNo + 1;
-//			gs.log("found request item "+ optionNo.toString() +": " + reqitemoption.sc_item_option.item_option_new.name); 			
+			while(this.ciData.next()) {
+				deviceNo = deviceNo + 1;
+				gs.info("found sys_id for request item "+ deviceNo.toString() +": " + this.ciData.sys_id +" = " + this.ciData.getElement('short_description'));
+				
+				var deviceN = xmlDoc.createElement("device"+deviceNo);
+				xmlDoc.setCurrentElement(deviceN);
+				xmlDoc.createElementWithTextValue("cat_item", this.ciData.getElement('cat_item'));
+				xmlDoc.createElementWithTextValue("item_short_description", this.ciData.getElement('short_description'));
+				
+				
+ 				var reqitemoption = new GlideRecord('sc_item_option_mtom');
+ 				reqitemoption.addQuery('request_item='+this.ciData.sys_id+'^');
+ 				reqitemoption.query();
+				
+ 				var optionNo = 0;
+ 				while(reqitemoption.next()) {
+ 					optionNo = optionNo + 1;
+ 					gs.info("found request item "+ optionNo.toString() +": " + reqitemoption.getElement('sc_item_option.item_option_new.name'));
+					
+ 					var optionN = xmlDoc.createElement("option");
+ 					xmlDoc.setCurrentElement(optionN);
+ 					xmlDoc.createElementWithTextValue("item_name", reqitemoption.getElement('sc_item_option.item_option_new.name'));
+ 					xmlDoc.createElementWithTextValue("item_value", reqitemoption.getElement('sc_item_option.value'));
 			
-			var optionN = xmldoc.createElement("option");
-			xmldoc.setCurrent(optionN);
-			xmldoc.createElement("item_name", reqitemoption.sc_item_option.item_option_new.name);
-			xmldoc.createElement("item_value", reqitemoption.sc_item_option.value);
-
-			xmldoc.setCurrent(deviceN);
-		 } 
-		 
-
-	 }
-            return (xmldoc);
-        } catch (ex) {
-            this._log_error(ex);
-//			 gs.log("ezwimAddOrderedItemAttributesInXML.process caught error: " + ex.toString()); 
-        }
-    },
-    
-    _log_error: function(ex) {
-        this.logger.error('Unhandled exception: ' + ex + ' (ezwimAddOrderedItemAttributesInXML)');
-    },
-    
-    /*
-     * Log a message to the CI Identification log, but only if we've got debug logging turned on...
-     */
-    debug: function(msg) {
-        if (this.debug_flag)
-            this.logger.info(msg + ' (ezwimAddOrderedItemAttributesInXML)');
-    },
-    
-    type: 'ezwimAddOrderedItemAttributesInXML'
+ 					xmlDoc.setCurrentElement(deviceN);
+ 				}  // loop through all item options
+								
+			} // loop through all items
+			return (xmlDoc);
+		} catch (ex) {
+			gs.info('ezwimAddOrderedItemAttributesInXML.catch(ex) = ' + ex.toString() );
+			
+			//            this._log_error(ex);
+			//			 gs.log("ezwimAddOrderedItemAttributesInXML.process caught error: " + ex.toString());
+		}
+	},
+	
+	_log_error: function(ex) {
+		gs.info('ezwimAddOrderedItemAttributesInXML._log_error(ex) = ' + ex.toString() );
+		//this.logger.error('Unhandled exception: ' + ex + ' (ezwimAddOrderedItemAttributesInXML)');
+	},
+	
+	/*
+ 	* Log a message to the CI Identification log, but only if we've got debug logging turned on...
+ 	*/
+	debug: function(msg) {
+		if (this.debug_flag)
+			gs.info('ezwimAddOrderedItemAttributesInXML: ' + msg);
+	},
+	
+	type: 'ezwimAddOrderedItemAttributesInXML'
 };
 ]]></script>
         <sys_class_name>sys_script_include</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-26 10:49:55</sys_created_on>
         <sys_id>d25578fb37721300a07ddc1873990ee6</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>22</sys_mod_count>
         <sys_name>ezwimAddOrderedItemAttributesInXML</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_script_include_d25578fb37721300a07ddc1873990ee6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-26 13:42:52</sys_updated_on>
+        <sys_updated_on>2018-06-27 14:31:00</sys_updated_on>
     </sys_script_include>
 </record_update>
