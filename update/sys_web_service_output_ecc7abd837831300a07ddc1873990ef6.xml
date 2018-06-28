@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_web_service_output">
+    <sys_web_service_output action="INSERT_OR_UPDATE">
+        <name>sys_id</name>
+        <order>100</order>
+        <sys_class_name>sys_web_service_output</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-06-28 13:04:32</sys_created_on>
+        <sys_id>ecc7abd837831300a07ddc1873990ef6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>sys_id</sys_name>
+        <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
+        <sys_update_name>sys_web_service_output_ecc7abd837831300a07ddc1873990ef6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-06-28 13:04:32</sys_updated_on>
+        <web_service display_value="createOrder">692f1f9437831300a07ddc1873990e16</web_service>
+    </sys_web_service_output>
+</record_update>
