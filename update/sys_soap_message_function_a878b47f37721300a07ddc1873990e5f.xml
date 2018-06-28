@@ -7,10 +7,10 @@
         <basic_auth_user/>
         <certificate/>
         <enable_mutual_auth>false</enable_mutual_auth>
-        <envelope><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:examples:helloservice">
+        <envelope><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ezwim:esmorderservice">
    <soapenv:Header/>
    <soapenv:Body>
-      <urn:sayHello soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <urn:createOrder soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
  
 		  <object xsi:type="xsd:string">ORDER</object>
 		  <sysid xsi:type="xsd:string">${sys_id}</sysid>
@@ -41,7 +41,7 @@
 
 		  <devices xsi:type="xsd:string">${devices}</devices>
 		  
-	  </urn:sayHello>
+	  </urn:createOrder>
    </soapenv:Body>
 </soapenv:Envelope>]]></envelope>
         <function_name>SendOrder</function_name>
@@ -59,14 +59,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-26 11:04:25</sys_created_on>
         <sys_id>a878b47f37721300a07ddc1873990e5f</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>SendOrder</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
         <sys_policy/>
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_soap_message_function_a878b47f37721300a07ddc1873990e5f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-26 11:32:51</sys_updated_on>
+        <sys_updated_on>2018-06-28 12:06:37</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <use_mid_server/>
         <use_ws_security>false</use_ws_security>

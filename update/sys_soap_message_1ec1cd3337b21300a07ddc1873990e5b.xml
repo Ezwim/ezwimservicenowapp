@@ -15,64 +15,74 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-26 11:43:10</sys_created_on>
         <sys_id>1ec1cd3337b21300a07ddc1873990e5b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>EzwimESMSoftware</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
         <sys_policy/>
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_soap_message_1ec1cd3337b21300a07ddc1873990e5b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-26 11:43:10</sys_updated_on>
+        <sys_updated_on>2018-06-28 12:20:16</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <wsdl/>
-        <wsdl_xml><![CDATA[<definitions name = "HelloService"
-   targetNamespace = "http://sayhello.getsandbox.com/wsdl/HelloService.wsdl"
+        <wsdl_xml><![CDATA[<definitions name = "EzSoftware"
+   targetNamespace = "http://integration.ezwim.com/wsdl/EzSoftware.wsdl"
    xmlns = "http://schemas.xmlsoap.org/wsdl/"
    xmlns:soap = "http://schemas.xmlsoap.org/wsdl/soap/"
-   xmlns:tns = "http://www.examples.com/wsdl/HelloService.wsdl"
+   xmlns:tns = "http://integration.ezwim.com/wsdl/EzSoftware.wsdl"
    xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
  
-   <message name = "SayHelloRequest">
-      <part name = "firstName" type = "xsd:string"/>
+   <message name = "EzSoftwareRequest">
+      <part name = "object" type = "xsd:string"/>
+      <part name = "sysid" type = "xsd:string"/>
+      <part name = "licensed_by_raw" type = "xsd:string"/>
+      <part name = "licensed_by" type = "xsd:string"/>
+      <part name = "allocated_to" type = "xsd:string"/>
+      <part name = "display_name" type = "xsd:string"/>
+      <part name = "assigned_to_raw" type = "xsd:string"/>
+      <part name = "assigned_to" type = "xsd:string"/>
+      <part name = "sys_updated_on" type = "xsd:string"/>
    </message>
 	
-   <message name = "SayHelloResponse">
-      <part name = "greeting" type = "xsd:string"/>
+   <message name = "EzSoftwareResponse">
+      <part name = "status" type = "xsd:string"/>
+      <part name = "description" type = "xsd:string"/>
+      <part name = "id" type = "xsd:string"/>
    </message>
 
-   <portType name = "Hello_PortType">
-      <operation name = "sayHello">
-         <input message = "tns:SayHelloRequest"/>
-         <output message = "tns:SayHelloResponse"/>
+   <portType name = "EzSoftware_PortType">
+      <operation name = "sendSoftware">
+         <input message = "tns:EzSoftwareRequest"/>
+         <output message = "tns:EzSoftwareResponse"/>
       </operation>
    </portType>
 
-   <binding name = "Hello_Binding" type = "tns:Hello_PortType">
+   <binding name = "EzSoftware_Binding" type = "tns:EzSoftware_PortType">
       <soap:binding style = "rpc"
          transport = "http://schemas.xmlsoap.org/soap/http"/>
-      <operation name = "sayHello">
-         <soap:operation soapAction = "sayHello"/>
+      <operation name = "sendSoftware">
+         <soap:operation soapAction = "sendSoftware"/>
          <input>
             <soap:body
                encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
-               namespace = "urn:examples:helloservice"
+               namespace = "urn:ezwim:softwareservice"
                use = "encoded"/>
          </input>
 		
          <output>
             <soap:body
                encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
-               namespace = "urn:examples:helloservice"
+               namespace = "urn:ezwim:softwareservice"
                use = "encoded"/>
          </output>
       </operation>
    </binding>
 
-   <service name = "Hello_Service">
-      <documentation>WSDL File for userentitlements Service</documentation>
-      <port binding = "tns:Hello_Binding" name = "Hello_Port">
+   <service name = "EzSoftware">
+      <documentation>WSDL File for Users Software entitlements</documentation>
+      <port binding = "tns:EzSoftware_Binding" name = "EzSoftware_Port">
          <soap:address
-            location = "http://userentitlements.getsandbox.com/SayHello/" />
+            location = "http://integration.ezwim.com/sendSoftware/" />
       </port>
    </service>
 </definitions>]]></wsdl_xml>

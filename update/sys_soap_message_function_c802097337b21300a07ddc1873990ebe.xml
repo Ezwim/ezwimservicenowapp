@@ -7,13 +7,13 @@
         <basic_auth_user/>
         <certificate/>
         <enable_mutual_auth>false</enable_mutual_auth>
-        <envelope><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:examples:helloservice">
+        <envelope><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:ezwim:softwareservice">
    <soapenv:Header/>
 	<!-- http://userentitlements.getsandbox.com/sendSoftware  -->
 	<!-- https://integration-stagdup2.eztest.nu/servicenow -->
 
    <soapenv:Body>
-      <urn:sayHello soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <urn:sendSoftware soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
  
 		  <object xsi:type="xsd:string">SOFTWARE</object>
 		  <sysid xsi:type="xsd:string">${sys_id}</sysid>
@@ -25,7 +25,7 @@
 		  <assigned_to xsi:type="xsd:string">${assigned_to}</assigned_to>
 		  <sys_updated_on xsi:type="xsd:string">${sys_updated_on}</sys_updated_on>
 	  
-	  </urn:sayHello>
+	  </urn:sendSoftware>
    </soapenv:Body>
 </soapenv:Envelope>]]></envelope>
         <function_name>SendSoftware</function_name>
@@ -43,14 +43,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-26 11:44:56</sys_created_on>
         <sys_id>c802097337b21300a07ddc1873990ebe</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>SendSoftware</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
         <sys_policy/>
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_soap_message_function_c802097337b21300a07ddc1873990ebe</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-26 11:44:56</sys_updated_on>
+        <sys_updated_on>2018-06-28 12:20:40</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <use_mid_server/>
         <use_ws_security>false</use_ws_security>

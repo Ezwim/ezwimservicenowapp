@@ -15,64 +15,87 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-26 11:01:07</sys_created_on>
         <sys_id>d838b43f37721300a07ddc1873990e8f</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>EzwimESMOrders</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
         <sys_policy/>
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_soap_message_d838b43f37721300a07ddc1873990e8f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-26 11:19:48</sys_updated_on>
+        <sys_updated_on>2018-06-28 12:00:20</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <wsdl/>
-        <wsdl_xml><![CDATA[<definitions name = "HelloService"
-   targetNamespace = "http://sayhello.getsandbox.com/wsdl/HelloService.wsdl"
+        <wsdl_xml><![CDATA[<definitions name = "ESMOrder"
+   targetNamespace = "http://integration.ezwim.com/wsdl/ESMOrder.wsdl"
    xmlns = "http://schemas.xmlsoap.org/wsdl/"
    xmlns:soap = "http://schemas.xmlsoap.org/wsdl/soap/"
-   xmlns:tns = "http://www.examples.com/wsdl/HelloService.wsdl"
+   xmlns:tns = "http://integration.ezwim.com/wsdl/ESMOrder.wsdl"
    xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
  
-   <message name = "SayHelloRequest">
-      <part name = "firstName" type = "xsd:string"/>
+   <message name = "ESMOrderRequest">
+      <part name = "object" type = "xsd:string"/>
+      <part name = "sysid" type = "xsd:string"/>
+      <part name = "number" type = "xsd:string"/>
+      <part name = "short_description" type = "xsd:string"/>
+      <part name = "comments" type = "xsd:string"/>
+      <part name = "requested_for" type = "xsd:string"/>
+      <part name = "priority" type = "xsd:string"/>
+      <part name = "impact" type = "xsd:string"/>
+      <part name = "urgency" type = "xsd:string"/>
+      <part name = "due_date" type = "xsd:string"/>
+      <part name = "state" type = "xsd:string"/>
+      <part name = "stage" type = "xsd:string"/>
+      <part name = "request_state" type = "xsd:string"/>
+      <part name = "delivery_address" type = "xsd:string"/>
+      <part name = "price" type = "xsd:string"/>
+      <part name = "special_instructions" type = "xsd:string"/>
+      <part name = "approval" type = "xsd:string"/>
+      <part name = "upon_reject" type = "xsd:string"/>
+      <part name = "upon_approval" type = "xsd:string"/>
+      <part name = "sys_domain_path" type = "xsd:string"/>
+      <part name = "sys_class_name" type = "xsd:string"/>
+      <part name = "devices" type = "xsd:string"/>  
    </message>
 	
-   <message name = "SayHelloResponse">
-      <part name = "greeting" type = "xsd:string"/>
+   <message name = "ESMOrderResponse">
+      <part name = "status" type = "xsd:string"/>
+      <part name = "description" type = "xsd:string"/>
+      <part name = "id" type = "xsd:string"/>
    </message>
 
-   <portType name = "Hello_PortType">
-      <operation name = "sayHello">
-         <input message = "tns:SayHelloRequest"/>
-         <output message = "tns:SayHelloResponse"/>
+   <portType name = "ESMOrder_PortType">
+      <operation name = "createOrder">
+         <input message = "tns:ESMOrderRequest"/>
+         <output message = "tns:ESMOrderResponse"/>
       </operation>
    </portType>
 
-   <binding name = "Hello_Binding" type = "tns:Hello_PortType">
+   <binding name = "ESMOrder_Binding" type = "tns:ESMOrder_PortType">
       <soap:binding style = "rpc"
          transport = "http://schemas.xmlsoap.org/soap/http"/>
-      <operation name = "sayHello">
-         <soap:operation soapAction = "sayHello"/>
+      <operation name = "createOrder">
+         <soap:operation soapAction = "createOrder"/>
          <input>
             <soap:body
                encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
-               namespace = "urn:examples:helloservice"
+               namespace = "urn:ezwim:esmorderservice"
                use = "encoded"/>
          </input>
 		
          <output>
             <soap:body
                encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/"
-               namespace = "urn:examples:helloservice"
+               namespace = "urn:ezwim:esmorderservice"
                use = "encoded"/>
          </output>
       </operation>
    </binding>
 
-   <service name = "Hello_Service">
-      <documentation>WSDL File for HelloService</documentation>
-      <port binding = "tns:Hello_Binding" name = "Hello_Port">
+   <service name = "ESMOrder">
+      <documentation>WSDL File for ESM Orders</documentation>
+      <port binding = "tns:ESMOrder_Binding" name = "ESMOrder_Port">
          <soap:address
-            location = "http://sayhello.getsandbox.com/SayHello/" />
+            location = "http://integration.ezwim.com/sendOrder/" />
       </port>
    </service>
 </definitions>]]></wsdl_xml>
