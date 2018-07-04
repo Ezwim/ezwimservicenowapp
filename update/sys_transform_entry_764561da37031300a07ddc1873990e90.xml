@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_transform_entry">
+    <sys_transform_entry action="INSERT_OR_UPDATE">
+        <choice_action>create</choice_action>
+        <coalesce>false</coalesce>
+        <coalesce_case_sensitive>false</coalesce_case_sensitive>
+        <coalesce_empty_fields>false</coalesce_empty_fields>
+        <date_format>yyyy-MM-dd HH:mm:ss</date_format>
+        <map display_value="sc_request transformation rule">82d4ad9a37031300a07ddc1873990ea3</map>
+        <reference_value_field/>
+        <source_field>u_delivery_plan</source_field>
+        <source_script><![CDATA[answer = (function transformEntry(source) {
+
+	// Add your code here
+	return ""; // return the value to be put into the target field
+
+})(source);]]></source_script>
+        <source_table>x_214887_ezwim_sc_request</source_table>
+        <sys_class_name>sys_transform_entry</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-07-04 08:42:14</sys_created_on>
+        <sys_id>764561da37031300a07ddc1873990e90</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>u_delivery_plan</sys_name>
+        <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
+        <sys_update_name>sys_transform_entry_764561da37031300a07ddc1873990e90</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-07-04 08:42:14</sys_updated_on>
+        <target_field>delivery_plan</target_field>
+        <target_table>sc_request</target_table>
+        <use_source_script>false</use_source_script>
+    </sys_transform_entry>
+</record_update>
