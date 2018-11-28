@@ -49,15 +49,15 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-07-03 12:36:44</sys_created_on>
-        <sys_id>3351558237831300a07ddc1873990e88</sys_id>
+        <sys_id>7f3aa6034f5313005dfe00fe9310c705</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Comments and work notes</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
         <sys_policy/>
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_dictionary_x_214887_ezwim_sc_req_item_u_comments_and_work_notes</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-07-03 12:36:44</sys_updated_on>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2018-07-19 07:54:52</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

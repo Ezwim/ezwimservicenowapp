@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="gsw_change_log">
+    <gsw_change_log action="INSERT_OR_UPDATE">
+        <change_date>2018-08-17 08:31:52</change_date>
+        <changed_by display_value="Jaco van Rooijen">6816f79cc0a8016401c5a33be04be441</changed_by>
+        <content display_value="HTML Sanitizer *">45ca4fa711232200964f016bcc1bdd77</content>
+        <related_change_log_entry/>
+        <related_task_entry/>
+        <sys_class_name>gsw_change_log</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-08-17 08:31:52</sys_created_on>
+        <sys_id>f7d8cc644f0023005dfe00fe9310c743</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>2018-08-17 08:31:52</sys_name>
+        <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
+        <sys_update_name>gsw_change_log_f7d8cc644f0023005dfe00fe9310c743</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-08-17 08:31:52</sys_updated_on>
+        <type>4</type>
+    </gsw_change_log>
+</record_update>

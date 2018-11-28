@@ -15,14 +15,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-26 11:01:07</sys_created_on>
         <sys_id>d838b43f37721300a07ddc1873990e8f</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>EzwimESMOrders</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
         <sys_policy/>
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_soap_message_d838b43f37721300a07ddc1873990e8f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-28 12:00:20</sys_updated_on>
+        <sys_updated_on>2018-11-28 10:01:44</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <wsdl/>
         <wsdl_xml><![CDATA[<definitions name = "ESMOrder"
@@ -34,6 +34,10 @@
  
    <message name = "ESMOrderRequest">
       <part name = "object" type = "xsd:string"/>
+	   
+      <part name = "reseller" type = "xsd:string"/>
+      <part name = "company" type = "xsd:string"/>
+	   	   
       <part name = "sysid" type = "xsd:string"/>
       <part name = "number" type = "xsd:string"/>
       <part name = "short_description" type = "xsd:string"/>
