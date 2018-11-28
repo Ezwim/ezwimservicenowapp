@@ -32,7 +32,12 @@
 
 try { 
  var s = new sn_ws.SOAPMessageV2('EzwimESMSoftware', 'SendSoftware');
-
+var ourUser = gs.getUser();
+var ourCompany = new GlideRecord('core_company');
+	ourCompany.get(ourUser.getCompanyID());
+	
+s.setStringParameterNoEscape('reseller', gs.getProperty("x_214887_ezwim.esm_reseller")); 
+s.setStringParameterNoEscape('company', ourCompany.name); 
 	
 s.setStringParameterNoEscape('sys_id', current.sys_id); 
 /* s.setStringParameterNoEscape('licensed_by_raw', current.licensed_by); */
@@ -60,7 +65,7 @@ catch(ex) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>977241b337b21300a07ddc1873990e8f</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>Ezwim Send Software Entitlement to ESM</sys_name>
         <sys_overrides/>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
@@ -68,7 +73,7 @@ catch(ex) {
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_script_977241b337b21300a07ddc1873990e8f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-07-19 07:44:27</sys_updated_on>
+        <sys_updated_on>2018-11-28 15:42:13</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>

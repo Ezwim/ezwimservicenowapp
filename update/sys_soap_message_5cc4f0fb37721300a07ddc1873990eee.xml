@@ -15,14 +15,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-26 10:45:57</sys_created_on>
         <sys_id>5cc4f0fb37721300a07ddc1873990eee</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>EzwimESMCases</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
         <sys_policy/>
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_soap_message_5cc4f0fb37721300a07ddc1873990eee</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-28 09:37:44</sys_updated_on>
+        <sys_updated_on>2018-11-28 15:38:03</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <wsdl/>
         <wsdl_xml><![CDATA[<definitions name = "ESMCase"
@@ -33,7 +33,11 @@
    xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
  
    <message name = "ESMCaseRequest">
-      <part name = "object" type = "xsd:string"/>
+	  <part name = "object" type = "xsd:string"/>
+	   
+	  <part name = "reseller" type = "xsd:string"/>
+      <part name = "company" type = "xsd:string"/>
+	   
       <part name = "sysid" type = "xsd:string"/>
       <part name = "description" type = "xsd:string"/>
       <part name = "caller" type = "xsd:string"/>

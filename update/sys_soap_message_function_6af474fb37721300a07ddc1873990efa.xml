@@ -13,6 +13,10 @@
       <urn:createCase soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
  
 		  <object xsi:type="xsd:string">CASE</object>
+		  
+		  <reseller xsi:type="xsd:string">${reseller}</reseller>
+		  <company xsi:type="xsd:string">${company}</company>  
+		  
 		  <sysid xsi:type="xsd:string">${sys_id}</sysid>
 		  <description xsi:type="xsd:string">${description}</description>
 		  <caller xsi:type="xsd:string">${caller}</caller>
@@ -48,14 +52,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-26 10:47:00</sys_created_on>
         <sys_id>6af474fb37721300a07ddc1873990efa</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>SendCase</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
         <sys_policy/>
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_soap_message_function_6af474fb37721300a07ddc1873990efa</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-28 09:09:36</sys_updated_on>
+        <sys_updated_on>2018-11-28 15:40:08</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <use_mid_server/>
         <use_ws_security>false</use_ws_security>

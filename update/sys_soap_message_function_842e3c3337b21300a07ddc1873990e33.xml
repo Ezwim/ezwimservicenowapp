@@ -16,6 +16,10 @@
       <urn:sayHello soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
  
 		  <object xsi:type="xsd:string">USER</object>
+		  		  		  
+		  <reseller xsi:type="xsd:string">${reseller}</reseller>
+		  <company xsi:type="xsd:string">${company}</company>  
+		  		  
 		  <sysid xsi:type="xsd:string">${sys_id}</sysid>
 		  <department xsi:type="xsd:string">${department}</department>
 		  <cost_center xsi:type="xsd:string">${cost_center}</cost_center>
@@ -51,14 +55,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-26 11:27:36</sys_created_on>
         <sys_id>842e3c3337b21300a07ddc1873990e33</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>SendUser</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
         <sys_policy/>
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_soap_message_function_842e3c3337b21300a07ddc1873990e33</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-06-26 11:31:35</sys_updated_on>
+        <sys_updated_on>2018-11-28 15:40:36</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <use_mid_server/>
         <use_ws_security>false</use_ws_security>
