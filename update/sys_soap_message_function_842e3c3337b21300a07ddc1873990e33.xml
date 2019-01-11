@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_soap_message_function">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_soap_message_function">
     <sys_soap_message_function action="INSERT_OR_UPDATE">
         <authentication_type/>
         <basic_auth_password/>
@@ -13,7 +12,7 @@
 	<!-- https://integration-stagdup2.eztest.nu/servicenow -->
 
    <soapenv:Body>
-      <urn:sayHello soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+      <urn:sendUser soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
  
 		  <object xsi:type="xsd:string">USER</object>
 		  		  		  
@@ -37,7 +36,7 @@
 		  <preferred_language xsi:type="xsd:string">${preferred_language}</preferred_language>
 		  <last_login xsi:type="xsd:string">${last_login}</last_login>
  		  
-	  </urn:sayHello>
+	  </urn:sendUser>
    </soapenv:Body>
 </soapenv:Envelope>]]></envelope>
         <function_name>SendUser</function_name>
@@ -55,14 +54,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-06-26 11:27:36</sys_created_on>
         <sys_id>842e3c3337b21300a07ddc1873990e33</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>SendUser</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
         <sys_policy/>
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_soap_message_function_842e3c3337b21300a07ddc1873990e33</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-28 15:40:36</sys_updated_on>
+        <sys_updated_on>2019-01-11 14:14:47</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <use_mid_server/>
         <use_ws_security>false</use_ws_security>

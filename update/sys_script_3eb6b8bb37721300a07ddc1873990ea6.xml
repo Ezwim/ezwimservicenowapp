@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update sys_domain="global" table="sys_script">
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
     <sys_script action="INSERT_OR_UPDATE">
         <abort_action>false</abort_action>
         <access>package_private</access>
@@ -33,13 +32,16 @@
 try { 
 	
 var s = new sn_ws.SOAPMessageV2('EzwimESMOrders', 'SendOrder');
+
+/*
 var ourUser = gs.getUser();
 var ourCompany = new GlideRecord('core_company');
 	ourCompany.get(ourUser.getCompanyID());
+ s.setStringParameterNoEscape('company', ourCompany.name); 
+ */
 	
 s.setStringParameterNoEscape('reseller', gs.getProperty("x_214887_ezwim.esm_reseller")); 
-s.setStringParameterNoEscape('company', ourCompany.name); 
-	
+s.setStringParameterNoEscape('company', current.company.getDisplayValue()); 
 	
 s.setStringParameterNoEscape('number', current.number); 
 s.setStringParameterNoEscape('delivery_address', current.delivery_address); 
@@ -89,7 +91,7 @@ catch(ex) {
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>3eb6b8bb37721300a07ddc1873990ea6</sys_id>
-        <sys_mod_count>24</sys_mod_count>
+        <sys_mod_count>25</sys_mod_count>
         <sys_name>Ezwim Send new Order to ESM</sys_name>
         <sys_overrides/>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
@@ -97,7 +99,7 @@ catch(ex) {
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_script_3eb6b8bb37721300a07ddc1873990ea6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-11-28 15:17:22</sys_updated_on>
+        <sys_updated_on>2019-01-11 14:43:00</sys_updated_on>
         <template/>
         <when>async</when>
     </sys_script>

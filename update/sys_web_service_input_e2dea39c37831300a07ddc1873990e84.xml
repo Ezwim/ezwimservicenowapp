@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_web_service_input">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_web_service_input">
     <sys_web_service_input action="INSERT_OR_UPDATE">
         <name>approval</name>
         <order>200</order>

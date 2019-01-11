@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_dictionary action="INSERT_OR_UPDATE" element="u_sc_cat_item_option" table="x_214887_ezwim_sc_item_option">
         <active>true</active>
         <array>false</array>
@@ -49,7 +48,7 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-07-04 09:34:48</sys_created_on>
-        <sys_id>af3a66034f5313005dfe00fe9310c7e8</sys_id>
+        <sys_id>e2100e774f722300ff22b63ca310c74a</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Sc cat item option</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
@@ -57,7 +56,7 @@
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
         <sys_update_name>sys_dictionary_x_214887_ezwim_sc_item_option_u_sc_cat_item_option</sys_update_name>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2018-07-19 07:54:50</sys_updated_on>
+        <sys_updated_on>2019-01-11 12:26:02</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

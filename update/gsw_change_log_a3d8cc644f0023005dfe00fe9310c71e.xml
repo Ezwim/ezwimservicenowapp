@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="gsw_change_log">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="gsw_change_log">
     <gsw_change_log action="INSERT_OR_UPDATE">
         <change_date>2018-08-17 08:31:51</change_date>
-        <changed_by display_value="Jaco van Rooijen">6816f79cc0a8016401c5a33be04be441</changed_by>
+        <changed_by display_value="Live Administrator">6816f79cc0a8016401c5a33be04be441</changed_by>
         <content display_value="Excel Request Authorization">3ca893ab11232200964f016bcc1bdd67</content>
         <related_change_log_entry/>
         <related_task_entry/>

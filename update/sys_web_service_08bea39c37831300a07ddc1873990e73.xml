@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_web_service">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_web_service">
     <sys_web_service action="INSERT_OR_UPDATE">
         <active>true</active>
         <function_name>execute</function_name>
@@ -44,7 +43,7 @@
         <sys_update_name>sys_web_service_08bea39c37831300a07ddc1873990e73</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2018-06-28 13:40:55</sys_updated_on>
-        <wsdl>https://dev50904.service-now.com/x_214887_ezwim_createOrderDetails.do?WSDL</wsdl>
+        <wsdl>https://dev55927.service-now.com/x_214887_ezwim_createOrderDetails.do?WSDL</wsdl>
         <wsdl_compliance>false</wsdl_compliance>
     </sys_web_service>
 </record_update>
