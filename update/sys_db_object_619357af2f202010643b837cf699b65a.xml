@@ -3,6 +3,7 @@
         <access/>
         <actions_access>false</actions_access>
         <alter_access>false</alter_access>
+        <caller_access/>
         <client_scripts_access>false</client_scripts_access>
         <configuration_access>false</configuration_access>
         <create_access>false</create_access>
@@ -16,19 +17,20 @@
         <number_ref/>
         <provider_class/>
         <read_access>true</read_access>
-        <super_class display_value="Import Set Row" name="sys_import_set_row">a5b2fb6581131300aadba4a47c598e34</super_class>
+        <scriptable_table>false</scriptable_table>
+        <super_class display_value="Import Set Row" name="sys_import_set_row">68f03b84c923101091f9f064648327c6</super_class>
         <sys_class_code/>
         <sys_class_name>sys_db_object</sys_class_name>
         <sys_class_path/>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-07-03 12:36:41</sys_created_on>
-        <sys_id>53519d4237831300a07ddc1873990e3c</sys_id>
+        <sys_id>619357af2f202010643b837cf699b65a</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>Ezwim Sc Req Item</sys_name>
         <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
         <sys_policy/>
         <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
-        <sys_update_name>sys_db_object_53519d4237831300a07ddc1873990e3c</sys_update_name>
+        <sys_update_name>sys_db_object_619357af2f202010643b837cf699b65a</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2018-07-03 12:36:41</sys_updated_on>
         <update_access>false</update_access>

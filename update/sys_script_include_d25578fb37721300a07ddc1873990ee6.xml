@@ -3,6 +3,7 @@
         <access>public</access>
         <active>true</active>
         <api_name>x_214887_ezwim.ezwimAddOrderedItemAttributesInXML</api_name>
+        <caller_access/>
         <client_callable>false</client_callable>
         <description>Ezwim class for adding OrderedItem Attributes in XML formaat</description>
         <name>ezwimAddOrderedItemAttributesInXML</name>

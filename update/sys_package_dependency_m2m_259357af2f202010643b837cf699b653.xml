@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_package_dependency_m2m">
+    <sys_package_dependency_m2m action="INSERT_OR_UPDATE">
+        <dependency display_value="System Import Sets" source="com.glide.system_import_set">9be0b784c923101091f9f06464832734</dependency>
+        <min_version>1.0.0</min_version>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-24 12:15:19</sys_created_on>
+        <sys_id>259357af2f202010643b837cf699b653</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-24 12:15:19</sys_updated_on>
+    </sys_package_dependency_m2m>
+</record_update>

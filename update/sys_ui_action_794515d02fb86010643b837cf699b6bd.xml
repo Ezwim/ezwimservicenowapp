@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name>TEM_Upgrade_Service</action_name>
+        <active>true</active>
+        <client>true</client>
+        <client_script_v2><![CDATA[function onClick(g_form) {
+
+}]]></client_script_v2>
+        <comments/>
+        <condition/>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_button_v2>false</form_button_v2>
+        <form_context_menu>true</form_context_menu>
+        <form_link>false</form_link>
+        <form_menu_button_v2>false</form_menu_button_v2>
+        <form_style/>
+        <hint/>
+        <isolate_script>false</isolate_script>
+        <list_action>true</list_action>
+        <list_banner_button>true</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>true</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <list_style/>
+        <messages/>
+        <name>TEM Start Upgrade Flow</name>
+        <onclick>runClientCode()</onclick>
+        <order>100</order>
+        <script><![CDATA[//Client-side 'onclick' function
+function runClientCode(){
+//   if(<CONDITION_TO_VALIDATE> == false){
+//      return false;  //Abort submission
+//   }
+   //Call the UI Action and skip the 'onclick' function
+   gsftSubmit(null, g_form.getFormElement(), 'TEM_Upgrade_Service'); //MUST call the 'Action name' set in this UI Action
+}
+
+//Code that runs without 'onclick'
+//Ensure call to server-side function with no browser errors
+if(typeof window == 'undefined')
+   runBusRuleCode();
+
+//Server-side function
+function runBusRuleCode(){
+var gdt = new GlideDateTime(current.upgrade_by); //instantiates a GlideDateTime object with the date in the original_date field
+gdt.addDaysLocalTime(5);
+current.new_date = gdt.getDate();
+current.update();
+
+//	current.<field_name> = <value>;
+//   current.update();
+   gs.addInfoMessage('Updated upgrade_by with 5 days');
+   action.setRedirectURL(current);
+}
+
+
+
+]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-11-26 11:04:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>794515d02fb86010643b837cf699b6bd</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>TEM Start Upgrade Flow</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Ezwim" source="x_214887_ezwim">c9b030f337321300a07ddc1873990e22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Ezwim">c9b030f337321300a07ddc1873990e22</sys_scope>
+        <sys_update_name>sys_ui_action_794515d02fb86010643b837cf699b6bd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-11-26 14:48:44</sys_updated_on>
+        <table>x_214887_ezwim_tem_service</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>false</ui16_compatible>
+    </sys_ui_action>
+</record_update>
